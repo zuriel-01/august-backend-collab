@@ -36,8 +36,8 @@ const HomeSectionOne=()=>{
 
     return(
         <>
-            <section className="pt-20 pl-40 bg-neutral-50  h-screen ">
-                <div className="flex gap-5 w-fit">
+            <section className="pt-5 px-[1rem] lg:pl-40 bg-neutral-50 w-fit  h-[113vh] ">
+                <div className="md:flex gap-5 w-fit">
 
                     {/* Personal Account Div */}
                     <div className="bg-white w-fit px-[1rem] py-[1rem] rounded-[8px]">
@@ -135,7 +135,7 @@ const HomeSectionOne=()=>{
 
 
                     {/* Card Div */}
-                    <div className="bg-gradient-to-r from-cyan-500 to-cyan-900 text-white w-fit px-[1rem] py-[1rem] rounded-[8px]">
+                    <div className=" mt-5 bg-gradient-to-r from-cyan-500 to-cyan-900 text-white w-fit px-[1rem] py-[1rem] rounded-[8px]">
                         <div className="flex items-center">
                             <div className="flex items-center gap-1 border font-semibold border-white rounded-[5px] py-[3px] px-2 ">
                                 <p className=""><MdOutlineFlip /></p>
