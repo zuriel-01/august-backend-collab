@@ -11,6 +11,7 @@ import { MdOutlineSpeakerNotes } from "react-icons/md";
 import { LuRefreshCcw } from "react-icons/lu";
 import { MdOutlineFlip } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
+import { GrVisa } from "react-icons/gr";
 
 
 const HomeSectionOne=()=>{
@@ -40,7 +41,7 @@ const HomeSectionOne=()=>{
                 <div className="md:flex gap-5 w-fit">
 
                     {/* Personal Account Div */}
-                    <div className="bg-white w-fit px-[1rem] py-[1rem] rounded-[8px]">
+                    <div className="bg-white w-fit px-[1rem] py-[1rem] mt-5 rounded-[8px]">
                         <div className="flex items-center  ">
                             <h1 className="text-sm">Personal Account</h1>
                             <button className="ml-[8rem] text-sm border border-black rounded-[5px] py-[3px] px-2">+ Add Card</button>
@@ -158,7 +159,7 @@ const HomeSectionOne=()=>{
                                 : (
 
                                 <>
-                                    <p className="font-bold text-2xl bg-opacity-100  blurry-text ">$0,000,000.00</p>
+                                    <p className="font-bold text-2xl bg-opacity-100  blurry-text ">$0,000,00000.00</p>
                                     <p className=" cursor-pointer ml-10 text-xl"><RiEyeCloseLine /></p>
                                 </>)}
                                 
@@ -176,7 +177,7 @@ const HomeSectionOne=()=>{
 
                                 : (
                                     <>
-                                        <p className="font-bold bg-opacity-100  blurry-text text-2xl">0000 0000 0000 0000</p>
+                                        <p className="font-bold bg-opacity-100  blurry-text text-base">0000 0000 0000 </p>
                                         <p className=" cursor-pointer ml-auto text-xl"><RiEyeCloseLine /></p>
                                     </>)}
 
@@ -189,7 +190,7 @@ const HomeSectionOne=()=>{
                                 <p className="font-bold">07/26</p>
                             </div>
 
-                            <p className="text-xl font-bold">VISA</p>
+                            <p className="text-xl font-bold flex items-center "><GrVisa />ISA</p>
                         </div>
                     </div>
                 </div>
