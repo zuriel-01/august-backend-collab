@@ -37,7 +37,7 @@ const HomeSectionOne=()=>{
 
     return(
         <>
-            <section className="pt-5 px-[1rem] lg:pl-40 bg-neutral-50 w-full  h-[113vh] ">
+            <section className="pt-5 px-[1rem] lg:pl-40 bg-neutral-50 w-full   ">
                 <div className="md:flex gap-5 w-fit">
 
                     {/* Personal Account Div */}
