@@ -11,6 +11,11 @@ import { MdOutlineSpeakerNotes } from "react-icons/md";
 import { LuRefreshCcw } from "react-icons/lu";
 import { MdOutlineFlip } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
+import { GrVisa } from "react-icons/gr";
+
+<BsSend/>
+
+
 
 
 const HomeSectionOne=()=>{
@@ -36,11 +41,11 @@ const HomeSectionOne=()=>{
 
     return(
         <>
-            <section className="pt-5 px-[1rem] lg:pl-40 bg-neutral-50 w-full  h-[113vh] ">
+            <section className="pt-5 px-[1rem] lg:pl-40 bg-neutral-50 w-full   ">
                 <div className="md:flex gap-5 w-fit">
 
                     {/* Personal Account Div */}
-                    <div className="bg-white w-fit px-[1rem] py-[1rem] rounded-[8px]">
+                    <div className="bg-white w-fit px-[1rem] py-[1rem] mt-5 rounded-[8px]">
                         <div className="flex items-center  ">
                             <h1 className="text-sm">Personal Account</h1>
                             <button className="ml-[8rem] text-sm border border-black rounded-[5px] py-[3px] px-2">+ Add Card</button>
@@ -59,37 +64,61 @@ const HomeSectionOne=()=>{
                         <div className="flex items-center justify-between gap-5 mt-5">
                             {/* 1 */}
                             <div>
-                                {/* You can open the modal using document.getElementById('ID').showModal() method */}
-                                <button className="bg-neutral-100 text-xl py-3 px-3 rounded-full" onClick={()=>document.getElementById('my_modal_3').showModal()}><BsSend /></button>
-                                <p className="text-sm">Send</p>
-                                <dialog id="my_modal_3" className="modal">
+                                <button className="btn rounded-full  text-xl bg-neutral-100" onClick={()=>document.getElementById('my_modal_01').showModal()}><BsSend/></button>
+                                <p className="text-center">Send</p>
+                                <dialog id="my_modal_01" className="modal">
                                 <div className="modal-box">
+
+                                <div className="mask mask-circle h-[150px] w-[150px]">
+                                <img      src="/katie-transaction.webp"
+                                alt="Recipient Profile Image" />
+                                </div>                      
+                                <p className="py-4">Recipient: Black Beauty</p>
+                                <p className="py-4">Date: Feb 24, 2024</p>
+                                <p className="py-4">Amount: $2000</p>
+                                <p className="py-4">Time: 23:24 GMT</p>
+                                <p className="py-4">Status: Successful</p>
+                                {/* <p className="py-4">Txnhash: {txnHash1}</p> */}
+                                <div className="modal-action">
                                 <form method="dialog">
-                                {/* if there is a button in form, it will close the modal */}
-                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                        
+                                <button className="btn botder border-black bg-red-200">Exit</button>
                                 </form>
-                                <h3 className="font-bold text-lg">Transfer</h3>
-                                <p className="py-4">Press ESC key or click on ✕ button to close</p>
+                                </div>
                                 </div>
                                 </dialog>
                             </div>
 
+                            
                             {/* 2 */}
                             <div>
-                                {/* You can open the modal using document.getElementById('ID').showModal() method */}
-                                <button className="bg-neutral-100 text-xl py-3 px-3 rounded-full" onClick={()=>document.getElementById('my_modal_3').showModal()}><BsArrowDown /></button>
-                                <p className="text-sm">Receive</p>
-                                <dialog id="my_modal_3" className="modal">
+                                <button className="btn border rounded-full text-xl bg-neutral-100" onClick={()=>document.getElementById('my_modal_02').showModal()}><BsArrowDown/></button>
+                                <p>Receive</p>
+                                <dialog id="my_modal_02" className="modal">
                                 <div className="modal-box">
+
+                                <div className="mask mask-circle h-[150px] w-[150px]">
+                                <div className='bg-blue-500 py-20 px-6 text-center text-3xl'>K</div>
+                                </div>                      
+                                <p className="py-4">Recipient: Kate Bishop</p>
+                                <p className="py-4">Date: Feb 23, 2024</p>
+                                <p className="py-4">Amount: $2500</p>
+                                <p className="py-4">Time: 12:22 GMT</p>
+                                <p className="py-4">Status: Pending</p>
+                                {/* <p className="py-4">Txnhash: {txnHash2}</p> */}
+                                <div className="modal-action">
                                 <form method="dialog">
-                                {/* if there is a button in form, it will close the modal */}
-                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                        
+                                <button className="btn botder border-black bg-red-200">Exit</button>
                                 </form>
-                                <h3 className="font-bold text-lg">Receive</h3>
-                                <p className="py-4">Press ESC key or click on ✕ button to close</p>
+                                </div>
                                 </div>
                                 </dialog>
                             </div>
+
+
+
+                            
 
                             {/* 3 */}
                             <div>
@@ -158,7 +187,7 @@ const HomeSectionOne=()=>{
                                 : (
 
                                 <>
-                                    <p className="font-bold text-2xl bg-opacity-100  blurry-text ">$0,000,000.00</p>
+                                    <p className="font-bold text-2xl bg-opacity-100  blurry-text ">$0,000,00000.00</p>
                                     <p className=" cursor-pointer ml-10 text-xl"><RiEyeCloseLine /></p>
                                 </>)}
                                 
@@ -176,7 +205,7 @@ const HomeSectionOne=()=>{
 
                                 : (
                                     <>
-                                        <p className="font-bold bg-opacity-100  blurry-text text-2xl">0000 0000 0000 0000</p>
+                                        <p className="font-bold bg-opacity-100  blurry-text text-base">0000 0000 0000 </p>
                                         <p className=" cursor-pointer ml-auto text-xl"><RiEyeCloseLine /></p>
                                     </>)}
 
@@ -189,7 +218,7 @@ const HomeSectionOne=()=>{
                                 <p className="font-bold">07/26</p>
                             </div>
 
-                            <p className="text-xl font-bold">VISA</p>
+                            <p className="text-xl font-bold flex items-center "><GrVisa />ISA</p>
                         </div>
                     </div>
                 </div>
