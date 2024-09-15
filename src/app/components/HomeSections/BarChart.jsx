@@ -1,6 +1,6 @@
 'use client';
 
-import Link from "next/link";
+
 import React, { useRef, useEffect } from "react";
 import { Chart } from "chart.js/auto";
 
@@ -25,20 +25,21 @@ const BarChart = () => {
                     datasets: [
                         {
                             label: "Income",
+                            
                             data: [2500, 3100, 4000, 2800, 3500, 4100, 3000, 3800, 4500, 3100, 3900,4100, 5000],
                             backgroundColor: [
                                 "rgb(14, 165, 233, 0.5)",
-                                "rgb(255, 159, 64, 0.2)",
-                                "rgb(255, 205, 86, 0.2)",
-                                "rgb(75, 192, 192, 0.2)",
-                                "rgb(54, 162, 235, 0.2)",
-                                "rgb(153, 102, 255, 0.2)",
-                                "rgb(201, 203, 207, 0.2)",
-                                "rgb(201, 203, 207, 0.2)",
-                                "rgb(201, 203, 207, 0.2)",
-                                "rgb(201, 203, 207, 0.2)",
-                                "rgb(201, 203, 207, 0.2)",
-                                "rgb(201, 203, 207, 0.2)",
+                                "rgb(255, 159, 64, 0.5)",
+                                "rgb(255, 205, 86, 0.5)",
+                                "rgb(75, 192, 192, 0.5)",
+                                "rgb(54, 162, 235, 0.5)",
+                                "rgb(153, 102, 255, 0.5)",
+                                "rgb(201, 203, 207, 0.5)",
+                                "rgb(201, 203, 207, 0.5)",
+                                "rgb(201, 203, 207, 0.5)",
+                                "rgb(201, 203, 207, 0.5)",
+                                "rgb(201, 203, 207, 0.5)",
+                                "rgb(201, 203, 207, 0.5)",
                             ],
                             borderColor: [
                                 "rgb(255, 99, 132)",
@@ -83,7 +84,7 @@ const BarChart = () => {
 
     return (
         <>
-            <section className="relative w-[60vw] h-[60vh]">
+            <section className="relative w-[56vw] h-[60vh] bg-green">
                 <canvas ref={chartRef} />
             </section>
         </>
