@@ -1,4 +1,6 @@
 'use client'
+
+
 import Navbar from "./components/Navbar";
 import HomeSectionOne from "./components/HomeSections/HomeSectionOne";
 import Transaction from "./components/Transaction";
@@ -12,6 +14,7 @@ export default function Home() {
           
           <Navbar/>
           <HomeSectionOne/> 
+          <BarChart/>
           <Target/>
           <Transaction/>
         </div>
