@@ -1,8 +1,10 @@
 'use client'
 
-import BarChart from "./components/HomeSections/BarChart";
+
 import Navbar from "./components/Navbar";
 import HomeSectionOne from "./components/HomeSections/HomeSectionOne";
+import Transaction from "./components/Transaction";
+import BarChart from "./components/HomeSections/BarChart";
 import Target from "./components/Target";
 
 export default function Home() {
@@ -11,9 +13,10 @@ export default function Home() {
         <div >
           
           <Navbar/>
-          <HomeSectionOne/>
+          <HomeSectionOne/> 
           <BarChart/>
           <Target/>
+          <Transaction/>
         </div>
       </>
   );
