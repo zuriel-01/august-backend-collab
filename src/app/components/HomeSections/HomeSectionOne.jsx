@@ -13,7 +13,7 @@ import { MdOutlineFlip } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 import { GrVisa } from "react-icons/gr";
 
-<BsSend/>
+
 
 
 
