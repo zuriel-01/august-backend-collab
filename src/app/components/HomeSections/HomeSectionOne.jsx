@@ -12,8 +12,9 @@ import { LuRefreshCcw } from "react-icons/lu";
 import { MdOutlineFlip } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 import { GrVisa } from "react-icons/gr";
+import BarChart from "./BarChart";
 
-<BsSend/>
+
 
 
 
@@ -41,11 +42,11 @@ const HomeSectionOne=()=>{
 
     return(
         <>
-            <section className="pt-5 px-[1rem] lg:pl-40 bg-neutral-50 w-full   ">
+            <section className="pt-5 px-[1rem] lg:pl-40  w-full   ">
                 <div className="md:flex gap-5 w-fit">
 
                     {/* Personal Account Div */}
-                    <div className="bg-white w-fit px-[1rem] py-[1rem] mt-5 rounded-[8px]">
+                    <div className="bg-neutral-50 w-fit px-[1rem] py-[1rem] mt-5 rounded-[8px]">
                         <div className="flex items-center  ">
                             <h1 className="text-sm">Personal Account</h1>
                             <button className="ml-[8rem] text-sm border border-black rounded-[5px] py-[3px] px-2">+ Add Card</button>
@@ -228,6 +229,7 @@ const HomeSectionOne=()=>{
                     <h1>Overview</h1>
                 </div> */}
             </section>
+            
         </>
     )
 

@@ -33,7 +33,7 @@ export default function Transaction() {
         <h2 className='text-3xl pl-5 py-4'>Transactions</h2>
 
         <div className='py-9 px-2'>
-          <table className="table overflow-x-auto border-spacing-2 border  h-max w-screen rounded-md  bg-white text-2xl ">
+          <table className="table overflow-x-auto border-spacing-2 border  h-max w-[100] rounded-md  bg-white text-2xl ">
             {/* head */}
             <thead className=' border text-2xl text-black'>
               <tr>

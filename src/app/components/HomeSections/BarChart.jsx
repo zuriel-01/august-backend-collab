@@ -34,12 +34,12 @@ const BarChart = () => {
                                 "rgb(75, 192, 192, 0.5)",
                                 "rgb(54, 162, 235, 0.5)",
                                 "rgb(153, 102, 255, 0.5)",
-                                "rgb(201, 203, 207, 0.5)",
-                                "rgb(201, 203, 207, 0.5)",
-                                "rgb(201, 203, 207, 0.5)",
-                                "rgb(201, 203, 207, 0.5)",
-                                "rgb(201, 203, 207, 0.5)",
-                                "rgb(201, 203, 207, 0.5)",
+                                "rgb(50, 205, 50, 0.5)",
+                                "rgb(255, 105, 180, 0.5)",
+                                "rgb(0, 191, 255, 0.5)",
+                                "rgb(139, 69, 19, 0.5)",
+                                "rgb(127, 255, 212, 0.5)",
+                                "rgb(148, 0, 211, 0.5)",
                             ],
                             borderColor: [
                                 "rgb(255, 99, 132)",
@@ -84,7 +84,7 @@ const BarChart = () => {
 
     return (
         <>
-            <section className="relative w-[56vw] h-[60vh] bg-green">
+            <section className="relative w-[59vw] h-[60vh] bg-green ml-40 bg-neutral-50 mt-5">
                 <canvas ref={chartRef} />
             </section>
         </>
