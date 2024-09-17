@@ -3,6 +3,8 @@
 
 import Navbar from "./components/Navbar";
 import HomeSectionOne from "./components/HomeSections/HomeSectionOne";
+import Transaction from "./components/Transaction";
+import BarChart from "./components/HomeSections/BarChart";
 
 export default function Home() {
   return (
@@ -10,7 +12,8 @@ export default function Home() {
         <div >
           
           <Navbar/>
-          <HomeSectionOne/>
+          <HomeSectionOne/> 
+          <Transaction/>
         </div>
       </>
   );
