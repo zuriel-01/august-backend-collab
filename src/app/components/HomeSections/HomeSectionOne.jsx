@@ -62,12 +62,28 @@ const HomeSectionOne=()=>{
                             <button className="ml-[8rem] text-sm border border-black rounded-[5px] py-[3px] px-2">+ Add Card</button>
                         </div>
 
+
+                        
                         <div className="flex items-center mt-5 font-bold">
-                            <h1 className="text-xl">$0.00</h1>
+                            
         
-                            <div onClick={toggleShowAccountBalance} className="flex items-center ml-auto">
-                                <p className="ml-auto cursor-pointer text-black text-xl"><VscEye /></p>
-                                <p className="ml-auto cursor-pointer text-black text-xl"><RiEyeCloseLine /></p> 
+                            <div onClick={toggleShowAccountBalance} className="flex items-center cursor-pointer">
+
+                            {showAccountBalance ? (
+
+                            <>
+                            <p className="font-bold text-2xl ">$0.00</p>
+                            <p className="ml-10 text-xl "><VscEye /></p>
+                            </>)
+
+                            : (
+
+                            <div className="flex items-center">
+                            <p className="font-bold text-2xl  opacity-10 text-black  ">X.XX</p>
+                            <p className=" cursor-pointer ml-12 text-xl"><RiEyeCloseLine /></p>
+                            </div>)}
+
+
                             </div>
                         </div>
 
@@ -157,7 +173,7 @@ const HomeSectionOne=()=>{
                                             <p className="text-black">@WaylonZieme</p>
                                         </div>
 
-                                        <div className="flex items-center gap-1 text-sky-400">
+                                        <div className="flex items-center gap-1 text-sky-400 cursor-pointer">
                                             <p>Copy</p>
                                             <p><IoCopyOutline /></p>
                                         </div>
@@ -169,7 +185,7 @@ const HomeSectionOne=()=>{
                                             <p className="text-black">Waylon Zieme</p>
                                         </div>
 
-                                        <div className="flex items-center gap-1 text-sky-400">
+                                        <div className="flex items-center gap-1 text-sky-400 cursor-pointer">
                                             <p>Copy</p>
                                             <p><IoCopyOutline /></p>
                                         </div>
@@ -181,7 +197,7 @@ const HomeSectionOne=()=>{
                                             <p className="text-black">65007834</p>
                                         </div>
 
-                                        <div className="flex items-center gap-1 text-sky-400">
+                                        <div className="flex items-center gap-1 text-sky-400 cursor-pointer">
                                             <p>Copy</p>
                                             <p><IoCopyOutline /></p>
                                         </div>
@@ -222,7 +238,7 @@ const HomeSectionOne=()=>{
                                             <label className="text-sm text-neutral-600" htmlFor="">Enter Amount</label>
                                             <input type="tel"
                                             placeholder="$200"
-                                            className="py-1 border border-neutral-400 outline-none px-2 rounded-[8px]" />
+                                            className="py-2 border border-neutral-400 outline-none px-2 rounded-[8px]" />
                                         </form>
                                     </div>
 
@@ -378,6 +394,9 @@ const HomeSectionOne=()=>{
                             <p className="text-xl font-bold flex items-center ">VISA</p>
                         </div>
                     </div>
+
+
+
                 </div>
 
                 {/* Overview Div */}
