@@ -9,7 +9,7 @@ import { TbTransactionDollar } from "react-icons/tb";
 import { PiInvoiceDuotone } from "react-icons/pi";
 import { LuGoal } from "react-icons/lu";
 import { BiUser } from "react-icons/bi";
-import { FcOnlineSupport } from "react-icons/fc";
+import { BiSupport } from "react-icons/bi";
 import { GoSun } from "react-icons/go";
 import { BsMoonStars } from "react-icons/bs";
 import { VscBellDot } from "react-icons/vsc";
@@ -62,11 +62,11 @@ const Navbar = () => {
   return (
     <div className="relative">
       {!smallSide ? (
-        <aside className="fixed top-0 left-0 h-full w-24 bg-white shadow-lg shadow-sky-100 z-50">
-          <div className="flex flex-col items-center gap-8 p-5">
+        <aside className="fixed top-0 left-0 h-full w-24 bg-white shadow-lg shadow-sky-100 z-50 pb-8">
+          <div className="flex flex-col items-center gap-6 p-5">
             <p
               onClick={toggleSmall}
-              className="absolute right-[-11px] top-[3rem]"
+              className="cursor-pointer hover:text-sky-600 absolute right-[-11px] top-[3rem]"
             >
               <IoIosArrowDropright className="text-3xl" />
             </p>
@@ -82,7 +82,7 @@ const Navbar = () => {
             <ul className="flex flex-col gap-2">
               <li
                 onClick={() => toggleIcon("search")}
-                className={` ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 ${
                   searchIcon ? "text-sky-400 bg-sky-200" : "bg-white"
                 } rounded-md text-black cursor-pointer p-2`}
               >
@@ -90,15 +90,15 @@ const Navbar = () => {
               </li>
               <li
                 onClick={() => toggleIcon("cards")}
-                className={`cursor-pointer ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 cursor-pointer ${
                   cardsIcon ? "text-sky-400 bg-sky-200" : "bg-white"
                 }  rounded-md text-black cursor-pointer p-2`}
               >
-                <PiCards className="text-3xl" />
+                <PiCards className="text-2xl" />
               </li>
               <li
                 onClick={() => toggleIcon("transactions")}
-                className={`cursor-pointer ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 cursor-pointer ${
                   transactionsIcon ? "text-sky-400 bg-sky-200" : "bg-white"
                 }  rounded-md text-black cursor-pointer p-2`}
               >
@@ -106,7 +106,7 @@ const Navbar = () => {
               </li>
               <li
                 onClick={() => toggleIcon("invoice")}
-                className={`cursor-pointer ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 cursor-pointer ${
                   invoiceIcon ? "text-sky-400 bg-sky-200" : "bg-white"
                 }  rounded-md text-black cursor-pointer p-2`}
               >
@@ -114,7 +114,7 @@ const Navbar = () => {
               </li>
               <li
                 onClick={() => toggleIcon("goals")}
-                className={`cursor-pointer ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 cursor-pointer ${
                   goalsIcon ? "text-sky-400 bg-sky-200" : "bg-white"
                 }  rounded-md text-black cursor-pointer p-2`}
               >
@@ -122,7 +122,7 @@ const Navbar = () => {
               </li>
               <li
                 onClick={() => toggleIcon("account")}
-                className={`cursor-pointer ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 cursor-pointer ${
                   accountIcon ? "text-sky-400 bg-sky-200" : "bg-white"
                 }  rounded-md text-black cursor-pointer p-2`}
               >
@@ -145,7 +145,7 @@ const Navbar = () => {
             </p>
           </div> */}
 
-            <div className="flex flex-col gap-2 border border-sky-400 rounded-full w-max">
+            <div className="flex flex-col gap-4 border border-sky-400 rounded-full w-max">
               <p
                 onClick={toggleLight}
                 className={`relative rounded-full text-black overflow-hidden cursor-pointer px-2 py-2 transform transition-all duration-500 ease-in-out 
@@ -177,11 +177,11 @@ const Navbar = () => {
 
             <p
               onClick={() => toggleIcon("support")}
-              className={`cursor-pointer ${
+              className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 cursor-pointer ${
                 supportIcon ? "text-sky-400 bg-sky-200" : "bg-white"
               }  rounded-md text-black cursor-pointer p-2`}
             >
-              <FcOnlineSupport className="text-4xl" />
+              <BiSupport className="text-3xl" />
             </p>
           </div>
         </aside>
@@ -190,7 +190,7 @@ const Navbar = () => {
           <div className="flex flex-col items-center justify-between gap-8 p-5 ">
             <p
               onClick={toggleSmall}
-              className="absolute right-[-8px] top-[3rem]"
+              className="hover:text-sky-600 cursor-pointer absolute right-[-8px] top-[3rem]"
             >
               <IoIosArrowDropleft className="text-3xl" />
             </p>
@@ -207,7 +207,7 @@ const Navbar = () => {
             <ul className="flex flex-col gap-4">
               <li
                 onClick={() => toggleIcon("search")}
-                className={`flex items-center gap-5 text-lg ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 flex items-center gap-5 text-lg ${
                   searchIcon
                     ? "text-black bg-sky-200"
                     : "text-gray-700 bg-white"
@@ -222,7 +222,7 @@ const Navbar = () => {
               </li>
               <li
                 onClick={() => toggleIcon("cards")}
-                className={`flex items-center gap-5 text-lg ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 flex items-center gap-5 text-lg ${
                   cardsIcon ? "text-black bg-sky-200" : "text-gray-700 bg-white"
                 } rounded-md text cursor-pointer p-1`}
               >
@@ -235,7 +235,7 @@ const Navbar = () => {
               </li>
               <li
                 onClick={() => toggleIcon("transactions")}
-                className={`flex items-center gap-5 text-lg ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 flex items-center gap-5 text-lg ${
                   transactionsIcon
                     ? "text-black bg-sky-200"
                     : "text-gray-700 bg-white"
@@ -250,7 +250,7 @@ const Navbar = () => {
               </li>
               <li
                 onClick={() => toggleIcon("invoice")}
-                className={`flex items-center gap-5 text-lg ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 flex items-center gap-5 text-lg ${
                   invoiceIcon
                     ? "text-black bg-sky-200"
                     : "text-gray-700 bg-white"
@@ -265,7 +265,7 @@ const Navbar = () => {
               </li>
               <li
                 onClick={() => toggleIcon("goals")}
-                className={`flex items-center gap-5 text-lg ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 flex items-center gap-5 text-lg ${
                   goalsIcon ? "text-black bg-sky-200" : "text-gray-700 bg-white"
                 } rounded-md text cursor-pointer p-1`}
               >
@@ -278,7 +278,7 @@ const Navbar = () => {
               </li>
               <li
                 onClick={() => toggleIcon("account")}
-                className={`flex items-center gap-5 text-lg ${
+                className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 flex items-center gap-5 text-lg ${
                   accountIcon
                     ? "text-black bg-sky-200"
                     : "text-gray-700 bg-white"
@@ -311,7 +311,7 @@ const Navbar = () => {
                 <BsMoonStars className="text-3xl" />
               </p>
             </div> */}
-
+            {/* this is for the theme toggle icons */}
             <div className="flex gap-2 border border-sky-400 rounded-full w-max">
               <p
                 onClick={toggleLight}
@@ -342,8 +342,13 @@ const Navbar = () => {
               </p>
             </div>
 
-            <p>
-              <FcOnlineSupport className="text-4xl" />
+            <p
+              onClick={() => toggleIcon("support")}
+              className={`border-r-4 border-r-transparent hover:bg-sky-300 hover:text-sky-200 hover:border-r-blue-700 hover:border-r-4 cursor-pointer ${
+                supportIcon ? "text-sky-400 bg-sky-200" : "bg-white"
+              }  rounded-md text-black cursor-pointer p-2`}
+            >
+              <BiSupport className="text-3xl" />
             </p>
           </div>
         </aside>
@@ -361,9 +366,9 @@ const Navbar = () => {
               />
               <button
                 type="submit"
-                className="text-2xl bg-slate-600 text-white rounded px-2 py-1"
+                className="text-sm bg-slate-600 text-white rounded px-1 py-2 italic hover:bg-sky-400 hover:text-black hover:font-semibold shadow-lg"
               >
-                👌
+                Send
               </button>
               <LiaSearchSolid className="text-gray-400 text-2xl absolute top-1/2 left-3 transform -translate-y-1/2" />
             </form>
@@ -417,9 +422,9 @@ const Navbar = () => {
               />
               <button
                 type="submit"
-                className="text-2xl bg-slate-600 text-white rounded px-2 py-1"
+                className="text-sm bg-slate-600 text-white rounded px-1 py-2 italic hover:bg-sky-400 hover:text-black hover:font-semibold shadow-lg"
               >
-                👌
+                Send
               </button>
               <LiaSearchSolid className="text-gray-400 text-2xl absolute top-1/2 left-3 transform -translate-y-1/2" />
             </form>
