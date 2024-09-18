@@ -16,6 +16,13 @@ import p1 from '../images/p1.jpg'
 import p2 from '../images/p2.jpg'
 import p3 from '../images/p3.jpg'
 import p4 from '../images/p4.jpg'
+import { PiBankLight } from "react-icons/pi";
+import { MdPhoneIphone } from "react-icons/md";
+import { BiWifi } from "react-icons/bi";
+import { TbBulb } from "react-icons/tb";
+import { FaTv } from "react-icons/fa";
+import { HiOutlineGiftTop } from "react-icons/hi2";
+import { ImSpades } from "react-icons/im";
 
 
 
@@ -45,7 +52,7 @@ const HomeSectionOne=()=>{
 
     return(
         <>
-            <section className="pt-[8rem]  ml-[0.5px] lg:pl-40  w-full bg-neutral-100 h-screen   ">
+            <section className="pt-[8rem]  ml-[0.5px] lg:pl-40  w-full bg-neutral-100 h-[70vh]   ">
                 <div className="md:flex gap-5 w-fit">
 
                     {/* Personal Account Div */}
@@ -115,7 +122,7 @@ const HomeSectionOne=()=>{
                                             </div>
 
                                             <div className="mt-10 flex m-auto">
-                                                <button className="bg-sky-400 text-white px-16 py-2 w-full">Continue</button>
+                                                <button className="bg-sky-400 text-white px-16 py-2 w-full rounded-[8px]">Continue</button>
                                             </div>
 
 
@@ -210,18 +217,39 @@ const HomeSectionOne=()=>{
                                         <p className="m-auto text-2xl font-semibold">$20,000.00</p>
                                     </div>
 
-                                    <div className="">
+                                    <div className="mt-8">
                                         <form className="flex flex-col gap-1" action="">
-                                            <label htmlFor="">Enter Amount</label>
+                                            <label className="text-sm text-neutral-600" htmlFor="">Enter Amount</label>
                                             <input type="tel"
                                             placeholder="$200"
                                             className="py-1 border border-neutral-400 outline-none px-2 rounded-[8px]" />
                                         </form>
                                     </div>
 
-                                    <div className="flex items-center justify-between ">
+                                    <div className="flex items-center justify-between mt-6 ">
                                         <p className="flex items-center gap-1"><span className="text-xl"><LuSwitchCamera/></span>Withdraw To</p>
-                                        <button>Add Beneficiary </button>
+                                        <button className="border border-black p-2 rounded-[8px]">Add Beneficiary </button>
+                                    </div>
+
+                                    <div className="mt-6 border border-sky-600 px-5 py-2 rounded-[8px]">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-2">
+                                                <p className="bg-neutral-200 p-4 rounded-full"><PiBankLight /></p>
+                                                <div className="">
+                                                    <p className="text-sm">Joy Akpobi</p>
+                                                    <p className="text-sm">*** **** 1234</p>
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div className="mt-10 flex m-auto">
+                                        <button className="bg-sky-400 text-white px-16 py-2 w-full rounded-[8px]">Continue</button>
                                     </div>
                                 </div>
                                 {/* <p className="py-4">Press ESC key or click on ✕ button to close</p> */}
@@ -232,16 +260,53 @@ const HomeSectionOne=()=>{
                             {/* 4 */}
                             <div>
                                 {/* You can open the modal using document.getElementById('ID').showModal() method */}
-                                <button className="bg-neutral-100 text-xl py-3 px-3 rounded-full" onClick={()=>document.getElementById('my_modal_3').showModal()}><MdOutlineSpeakerNotes /></button>
+                                <button className="btn border rounded-full text-xl bg-neutral-100" onClick={()=>document.getElementById('my_modal_4').showModal()}><MdOutlineSpeakerNotes /></button>
                                 <p className="text-sm">Pay Bill</p>
-                                <dialog id="my_modal_3" className="modal">
+                                <dialog id="my_modal_4" className="modal">
                                 <div className="modal-box">
                                 <form method="dialog">
                                 {/* if there is a button in form, it will close the modal */}
                                 <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                 </form>
-                                <h3 className="font-bold text-lg"></h3>
-                                <p className="py-4">Press ESC key or click on ✕ button to close</p>
+                                <div>
+                                    <div>
+                                        <h1 className="text-2xl font-medium">Pay Bills</h1>
+                                        <div className="flex items-center justify-between  mt-6">
+                                            <div>
+                                                <h1 className="bg-yellow-500 p-5 w-fit rounded-[8px] text-4xl"><MdPhoneIphone /></h1>
+                                                <p className=" text-sm ml-3">Top-Up</p>
+                                            </div>
+
+                                            <div>
+                                                <h1 className="bg-sky-500 p-5 w-fit rounded-[8px] text-4xl"><BiWifi /></h1>
+                                                <p className=" text-sm ml-2">Internet</p>
+                                            </div>
+
+                                            <div>
+                                                <h1 className="bg-blue-700 p-5 w-fit rounded-[8px] text-4xl"><TbBulb /></h1>
+                                                <p className=" text-sm ml-1">Electricity</p>
+                                            </div>
+
+                                            <div>
+                                                <h1 className="bg-green-500 p-5 w-fit rounded-[8px] text-4xl"><FaTv /></h1>
+                                                <p className=" text-sm ml-6">TV</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="mt-5 flex items-center gap-4">
+                                            <div>
+                                                <h1 className="bg-neutral-500 p-5 w-fit rounded-[8px] text-4xl"><HiOutlineGiftTop /></h1>
+                                                <p className=" text-sm ml-">Gift Cards</p>
+                                            </div>
+
+                                            <div>
+                                                <h1 className="bg-red-700 p-5 w-fit rounded-[8px] text-4xl"><ImSpades /></h1>
+                                                <p className=" text-sm ml-3">Betting</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/* <p className="py-4">Press ESC key or click on ✕ button to close</p> */}
                                 </div>
                                 </dialog>
                             </div>
