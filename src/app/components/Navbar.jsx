@@ -400,7 +400,7 @@ const Navbar = () => {
                 <IoSettingsOutline className="text-2xl" /> Settings
               </li>
               <li className="flex items-center gap-3 hover:bg-sky-200 cursor-pointer p-2 hover:rounded-md">
-                <FcOnlineSupport className="text-2xl" /> Support
+                <BiSupport className="text-2xl" /> Support
               </li>
               <li className="flex items-center gap-3 hover:bg-sky-200 cursor-pointer p-2 hover:rounded-md">
                 <RiLogoutBoxRLine className="text-2xl" /> Logout
