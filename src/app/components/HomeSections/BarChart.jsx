@@ -83,11 +83,11 @@ const BarChart = () => {
     }, []);
 
     return (
-        <>
-            <section className="relative w-[59vw] h-[60vh] bg-green ml-40 bg-neutral-50 mt-5">
+        <div>
+            <section className="relative  h-[70vh] bg-green pl-[10rem] bg-neutral-100 w-[100vw] px-[1rem] pb-10">
                 <canvas ref={chartRef} />
             </section>
-        </>
+        </div>
     );
 };
 

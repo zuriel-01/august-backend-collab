@@ -1,4 +1,4 @@
-'use client'
+
 
 
 import Navbar from "./components/Navbar";
@@ -10,8 +10,7 @@ import Target from "./components/Target";
 export default function Home() {
   return (
       <>
-        <div >
-          
+        <div className="">
           <Navbar/>
           <HomeSectionOne/> 
           <BarChart/>
