@@ -1,6 +1,8 @@
 import localFont from "next/font/local";
 import { Sora } from "next/font/google";
 import "./globals.css";
+import { ThemeContext } from "./context/ThemeContext";
+import ThemeProvider from "./provider/ThemeProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,7 +17,7 @@ const geistMono = localFont({
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora-mono",
-  weight: ["100", "200", "300","400","500","600","700","800"]
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"]
 });
 
 export const metadata = {
@@ -29,8 +31,14 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sora.variable} antialiased`}
       >
-        {children}
-        
+
+       
+
+
+            {children}
+
+          
+
       </body>
     </html>
   );

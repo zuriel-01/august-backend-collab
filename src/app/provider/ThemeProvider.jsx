@@ -1,6 +1,8 @@
+"use client"
 import React, { Children, useContext, useEffect, useState } from 'react'
-import { ThemeContext } from '../context/ThemeContext'
+
 import { useSearchParams } from 'next/navigation'
+import { ThemeContext } from '../context/ThemeContext'
 
 export default function ThemeProvider({ children }) {
     const { theme } = useContext(ThemeContext)

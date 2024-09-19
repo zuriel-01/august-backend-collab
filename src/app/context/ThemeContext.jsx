@@ -1,3 +1,4 @@
+"use client"
 import React, { createContext, useEffect } from 'react'
 
 export const ThemeContext=createContext()
@@ -36,9 +37,9 @@ export default function ThemeContexTwo({children}) {
         localStorage.setItem("theme",theme)
     }, [])
   return (
-    <ThemeContext.Provider value={{theme,toggle}}>
+    <ThemeContext.Provider value={{theme,toggle}}> {children} </ThemeContext.Provider>
+   
 
-            {children}
-    </ThemeContext.Provider>
+           
   )
 }
