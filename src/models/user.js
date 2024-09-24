@@ -1,7 +1,5 @@
 const { default: mongoose, trusted } = require("mongoose");
-const generateAccount=()=>{
-   const acct= "2" +   Math.ceil(Math.random()*10000000000)
-}
+
 const userSchema=new mongoose.Schema({
     username:{
         type:String,
