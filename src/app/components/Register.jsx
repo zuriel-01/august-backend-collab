@@ -23,6 +23,7 @@ const Register = () => {
   const [emailErr, setEmailErr] = useState(false)
   const [contactErr, setContactErr] = useState(false)
   const [passwordErr, setPasswordErr] = useState(false)
+  const [loader,setLoader]=useState(false)
 
 
   const [username, setUsername] = useState(false)
@@ -64,10 +65,10 @@ const Register = () => {
     }
 
     else{
-
+      setLoader(true)
       // fetch API here
       try {
-        const res= await axios.post('http://localhost:3000/api/regsiter', {username,email,contact,password})
+        const res= await axios.post('http://localhost:3000/api/register', {username,email,contact,password})
         console.log(res)
         
       } catch (error) {
@@ -130,7 +131,7 @@ const Register = () => {
               </p>
             </div>
 
-            <button className="glass rounded-full py-2 mt-1 px-3 shadow-md bg-sky-700  bg-opacity-50 hover:bg-opacity-70 hover:translate-y-px duration-300 text-white text-center font-semibold">Create Account</button>
+            <button className="glass rounded-full py-2 mt-1 px-3 shadow-md bg-sky-700  bg-opacity-50 hover:bg-opacity-70 hover:translate-y-px duration-300 text-white text-center font-semibold">{loader ? 'loading...' : " Create Account"}      </button>
           </form>
 
           <div className='flex text-center items-center justify-center py-4 '>

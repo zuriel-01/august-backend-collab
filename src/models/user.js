@@ -1,4 +1,5 @@
-const { default: mongoose, trusted } = require("mongoose");
+import mongoose from "mongoose"
+
 
 const userSchema=new mongoose.Schema({
     username:{
@@ -34,7 +35,8 @@ const userSchema=new mongoose.Schema({
     },
     otp:{
         type:Number,
-        max:4
+        
+       
     },
     emailVerified:{
         default:false,
@@ -44,6 +46,10 @@ const userSchema=new mongoose.Schema({
         type:Number
     },
     
+    // gender:{
+    //     type:String,
+    //     enum:['males'," female"]
+    // }
     // timestamsps:true-> provides the date of creation and date the record 
     // is updated
 }, {timestamps:true})
