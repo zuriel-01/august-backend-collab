@@ -1,7 +1,6 @@
-const { default: mongoose, trusted } = require("mongoose");
-const generateAccount=()=>{
-   const acct= "2" +   Math.ceil(Math.random()*10000000000)
-}
+import mongoose from "mongoose"
+
+
 const userSchema=new mongoose.Schema({
     username:{
         type:String,
@@ -36,7 +35,8 @@ const userSchema=new mongoose.Schema({
     },
     otp:{
         type:Number,
-        max:4
+        
+       
     },
     emailVerified:{
         default:false,
@@ -46,6 +46,10 @@ const userSchema=new mongoose.Schema({
         type:Number
     },
     
+    // gender:{
+    //     type:String,
+    //     enum:['males'," female"]
+    // }
     // timestamsps:true-> provides the date of creation and date the record 
     // is updated
 }, {timestamps:true})
