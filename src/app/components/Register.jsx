@@ -10,7 +10,7 @@ import Image from 'next/image';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import Link from 'next/link';
-import axios from 'axios';
+import axios from 'axios'
 
 
 
