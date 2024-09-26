@@ -1,5 +1,5 @@
 
-
+'use client'
 
 import Navbar from "./components/Navbar";
 import HomeSectionOne from "./components/HomeSections/HomeSectionOne";
@@ -7,27 +7,26 @@ import Transaction from "./components/Transaction";
 import BarChart from "./components/HomeSections/BarChart";
 import Target from "./components/Target";
 import { useRouter } from "next/navigation";
+import Otp from "./components/Otp";
 
 export default function Home() {
-  const router=useRouter
+  const router=useRouter()
   const status=false
 
-  if(status){
+  
      return (
       <>
         <div className="">
-          <Navbar/>
+          {/* <Navbar/>
           <HomeSectionOne/> 
           <BarChart/>
           <Target/>
-          <Transaction/>
+          <Transaction/> */}
+
+          <Otp/>
         </div>
       </>
   );
   }
 
-  else{
-    router.push('/register')
-  }
- 
-}
+
