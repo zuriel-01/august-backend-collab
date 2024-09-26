@@ -145,7 +145,7 @@ const Navbar = () => {
             </p>
           </div> */}
 
-            <div className="flex flex-col gap-4 border border-sky-400 rounded-full w-max">
+            <div className="flex flex-col gap-2 border border-sky-400 rounded-full w-max">
               <p
                 onClick={toggleLight}
                 className={`relative rounded-full text-black overflow-hidden cursor-pointer px-2 py-2 transform transition-all duration-500 ease-in-out 
@@ -157,7 +157,7 @@ const Navbar = () => {
       hover:scale-105`}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-sky-500 to-sky-800 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"></span>
-                <GoSun className="relative text-3xl" />
+                <GoSun className="relative text-2xl" />
               </p>
 
               <p
@@ -171,7 +171,7 @@ const Navbar = () => {
       hover:scale-105`}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-black via-sky-500 to-sky-800 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"></span>
-                <BsMoonStars className="relative text-3xl" />
+                <BsMoonStars className="relative text-2xl" />
               </p>
             </div>
 
@@ -324,7 +324,7 @@ const Navbar = () => {
       hover:scale-105`}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-500 via-sky-500 to-sky-800 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"></span>
-                <GoSun className="relative text-3xl" />
+                <GoSun className="relative text-2xl" />
               </p>
 
               <p
@@ -338,7 +338,7 @@ const Navbar = () => {
       hover:scale-105`}
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-black via-sky-500 to-sky-800 opacity-0 transition-opacity duration-500 ease-in-out group-hover:opacity-100"></span>
-                <BsMoonStars className="relative text-3xl" />
+                <BsMoonStars className="relative text-2xl" />
               </p>
             </div>
 
