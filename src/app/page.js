@@ -1,4 +1,4 @@
-"use client"
+
 
 
 import Navbar from "./components/Navbar";
@@ -9,9 +9,10 @@ import Target from "./components/Target";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
-  const router=useRouter()
+  const router=useRouter
   const status=false
 
+  if(status){
      return (
       <>
         <div className="">
@@ -23,5 +24,10 @@ export default function Home() {
         </div>
       </>
   );
-  
+  }
+
+  else{
+    router.push('/register')
+  }
+ 
 }
