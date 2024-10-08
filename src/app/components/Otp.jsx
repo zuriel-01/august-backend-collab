@@ -1,7 +1,10 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+import A1 from "../Images/icon1.png"
+import { FaLongArrowAltRight } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
-
+import Register from './Register';
+import { Component } from 'lucide-react';
 
 
 const Otp = () => {
@@ -75,7 +78,7 @@ const Otp = () => {
                             maxLength={1}
                             onChange={(e)=>handleChange(e,i)} 
     
-                            // onKeyDown={(e)=> handleKeyDown(index)}
+                            onKeyDown={(e)=> handleKeyDown(index)}
                             onPaste = {(e) => handlePaste(e)}
                             />;
 
