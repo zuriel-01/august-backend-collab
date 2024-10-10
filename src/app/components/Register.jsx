@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { useState } from 'react';
+import { useState,useEffcet } from 'react';
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
@@ -11,18 +11,23 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import Link from 'next/link';
 import axios from 'axios'
+import { useRouter } from 'next/navigation';
+
+
 
 
 
 
 
 const Register = () => {
+  const router=useRouter()
 
   const [show, setShow] = useState(false);
   const [usernameErr, setUsernameErr] = useState(false)
   const [emailErr, setEmailErr] = useState(false)
   const [contactErr, setContactErr] = useState(false)
   const [passwordErr, setPasswordErr] = useState(false)
+  const [err,setErr]=useState(false)
   const [loader,setLoader]=useState(false)
 
 
@@ -70,8 +75,25 @@ const Register = () => {
       try {
         const res= await axios.post('http://localhost:3000/api/register', {username,email,contact,password})
         console.log(res)
+        // after successfull registerartion
+        if(res.status==200){
+          
+          // this is temporal, ideally, we will get our email from the 
+          // next-auth
+
+          // for now, we will store the user email in our localstorage
+          // after a successful registeratiom
+          useEffect(()=>{
+            LocalStorage.setItem("email", email)
+          },[])
+
+          router.replace('/otpverify')
+
+          
+        }
         
       } catch (error) {
+        setErr("Something went wrong")
           console.log(error.message)
       }
 
@@ -101,6 +123,13 @@ const Register = () => {
         <h2 className='text-2xl font-semibold bg-gradient-to-r from-blue-100  to-cyan-700 text-transparent bg-clip-text py-7 text-center'>Register</h2> <div className='opacity-50'><Image width={0} height={0} className='w-8 absolute top-3 right-2' src="/icon1.png" alt="" /></div>
 
         <div>
+          {
+            err &&(
+            <div className="bg-red-500 text-center">
+              <h1 className="text-white ">{err}</h1>
+            </div>
+            )
+          }
           <form onSubmit={submithandler} action="" className='flex flex-col items-center gap-4 '>
             <div className='w-full relative'>
               <input onChange={(e)=>setUsername(e.target.value)} className={`${usernameErr && "border-2 border-red-600 wobble-hor-bottom" || " "  } border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90 placeholder-opacity-70`} placeholder='Username' type="text" />
