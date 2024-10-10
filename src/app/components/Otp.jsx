@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import A1 from "../Images/icon1.png"
+// import A1 from "../Images/icon1.png"
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import Register from './Register';
