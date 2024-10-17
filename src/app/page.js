@@ -1,6 +1,8 @@
 
 'use client'
 
+
+
 import Navbar from "./components/Navbar";
 import HomeSectionOne from "./components/HomeSections/HomeSectionOne";
 import Transaction from "./components/Transaction";

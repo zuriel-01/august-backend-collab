@@ -422,6 +422,11 @@ input[type=number] {
   background-position: center;
 }
 
+.sokkie>h1:nth-child(1){
+        font-size: 3rem;
+        color: red;
+}
+
       
 
 
