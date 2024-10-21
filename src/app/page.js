@@ -10,27 +10,50 @@ import BarChart from "./components/HomeSections/BarChart";
 import Target from "./components/Target";
 import { useRouter } from "next/navigation";
 import Otp from "./components/Otp";
-// import { useSession } from "next-auth/react"
+import { useSession } from "next-auth/react"
+import Loading from "./loading";
+
 
 export default function Home() {
-  // const session=useSession()
-  const router=useRouter()
-  const status=false
-  // console.log("this is the sessions-", session)
+
+  const session = useSession()
+  const router = useRouter()
+
+  console.log("this is the sessions-", session)
+
+  if(session.status=="loading"){
+    return (
+      <Loading/>
+    )
+  }
+  // protect the home page rout is use is not logged in
+  if (session.status == "unauthenticated") {
+    
+    return router.replace('/login')
+  }
+
   
-     return (
+
+  else {
+    return (
       <>
         <div className="">
-          <Navbar/>
-          <HomeSectionOne/> 
-          <BarChart/>
-          <Target/>
-          <Transaction/>
+          <Navbar />
+          <HomeSectionOne />
+          <BarChart />
+          <Target />
+          <Transaction />
 
-          
+
         </div>
       </>
-  );
+    );
   }
+
+
+
+
+
+}
 
 
