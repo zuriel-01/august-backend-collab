@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { useState,useEffcet } from 'react';
+import { useState, useEffect } from 'react';
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
@@ -20,15 +20,15 @@ import { useRouter } from 'next/navigation';
 
 
 const Register = () => {
-  const router=useRouter()
+  const router = useRouter()
 
   const [show, setShow] = useState(false);
   const [usernameErr, setUsernameErr] = useState(false)
   const [emailErr, setEmailErr] = useState(false)
   const [contactErr, setContactErr] = useState(false)
   const [passwordErr, setPasswordErr] = useState(false)
-  const [err,setErr]=useState(false)
-  const [loader,setLoader]=useState(false)
+  const [err, setErr] = useState(false)
+  const [loader, setLoader] = useState(false)
 
 
   const [username, setUsername] = useState(false)
@@ -50,7 +50,7 @@ const Register = () => {
     // prevents default form submission
     e.preventDefault();
 
-    if(!username){
+    if (!username) {
       setUsernameErr("fill in username")
     }
     // to make the error highlight on the input to go off , use the else
@@ -58,43 +58,40 @@ const Register = () => {
     //   setUsernameErr(false)
     // }
 
-    else  if(!email){
+    else if (!email) {
       setEmailErr("please fill in email")
     }
-    else  if(!contact){
+    else if (!contact) {
       setContactErr("please fill in contact")
     }
 
-    else  if(!password){
+    else if (!password) {
       setPasswordErr("please fill in password")
     }
 
-    else{
+    else {
       setLoader(true)
       // fetch API here
       try {
-        const res= await axios.post('http://localhost:3000/api/register', {username,email,contact,password})
+        const res = await axios.post('http://localhost:3000/api/register', { username, email, contact, password })
         console.log(res)
         // after successfull registerartion
-        if(res.status==200){
-          
+        if (res.status == 200) {
+          console.log("form submitted")
+          setLoader(false)
+
           // this is temporal, ideally, we will get our email from the 
           // next-auth
 
-          // for now, we will store the user email in our localstorage
-          // after a successful registeratiom
-          useEffect(()=>{
-            LocalStorage.setItem("email", email)
-          },[])
 
           router.replace('/otpverify')
 
-          
+
         }
-        
+
       } catch (error) {
-        setErr("Something went wrong")
-          console.log(error.message)
+        // setErr("Something went wrong")
+        // console.log(error.message)
       }
 
       // using teh fetch method
@@ -111,7 +108,7 @@ const Register = () => {
 
 
     }
-    
+
   }
 
 
@@ -124,30 +121,30 @@ const Register = () => {
 
         <div>
           {
-            err &&(
-            <div className="bg-red-500 text-center">
-              <h1 className="text-white ">{err}</h1>
-            </div>
+            err && (
+              <div className="bg-red-500 text-center">
+                <h1 className="text-white ">{err}</h1>
+              </div>
             )
           }
           <form onSubmit={submithandler} action="" className='flex flex-col items-center gap-4 '>
             <div className='w-full relative'>
-              <input onChange={(e)=>setUsername(e.target.value)} className={`${usernameErr && "border-2 border-red-600 wobble-hor-bottom" || " "  } border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90 placeholder-opacity-70`} placeholder='Username' type="text" />
+              <input onChange={(e) => setUsername(e.target.value)} className={`${usernameErr && "border-2 border-red-600 wobble-hor-bottom" || " "} border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90 placeholder-opacity-70`} placeholder='Username' type="text" />
               <FaUser className='absolute top-2 right-4 text-sm text-cyan-700 opacity-50 z-10' />
             </div>
 
             <div className='w-full relative'>
-              <input onChange={(e)=>setEmail(e.target.value)}  className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90  placeholder-opacity-70' placeholder='Email' type="email" />
+              <input onChange={(e) => setEmail(e.target.value)} className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90  placeholder-opacity-70' placeholder='Email' type="email" />
               <MdEmail className='absolute top-2 right-4 text-sm text-cyan-700 opacity-50 z-10' />
             </div>
 
             <div className='w-full relative'>
-              <input onChange={(e)=>setContact(e.target.value)} className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90  placeholder-opacity-70' placeholder='Contact' type="number" />
+              <input onChange={(e) => setContact(e.target.value)} className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90  placeholder-opacity-70' placeholder='Contact' type="number" />
               <FaPhone className='absolute top-2 right-4 text-sm text-cyan-700 opacity-50 z-10' />
             </div>
 
             <div className='w-full relative'>
-              <input onChange={(e)=>setPassword(e.target.value)} className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90  placeholder-opacity-70' placeholder='Password' type={(show === false) ? 'password' : 'text'} />
+              <input onChange={(e) => setPassword(e.target.value)} className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90  placeholder-opacity-70' placeholder='Password' type={(show === false) ? 'password' : 'text'} />
               <FaLock className='absolute top-2 right-4 text-sm text-cyan-700 opacity-50 ' />
             </div>
 
@@ -172,7 +169,7 @@ const Register = () => {
         </div>
       </div>
 
-     
+
     </div>
   )
 }

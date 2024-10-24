@@ -23,10 +23,10 @@ export default function Transaction() {
 
   return (
     <div className="pl-[5rem] bg-neutral-100">
-      <div className="rounded-lg  placeholder:px-[5rem] bg-white">
+      {/* <div className="rounded-lg  placeholder:px-[5rem] bg-white"> */}
         <h2 className="text-3xl px-9 py-4">Transactions</h2>
 
-        <div className="py-9 px-9">
+        {/* <div className="py-9 px-9"> */}
           <table className="table overflow-x-auto border-spacing-2 border  h-max w-[100] rounded-md  bg-white text-2xl ">
             {/* head */}
             <thead className=" border text-2xl text-black">
@@ -641,8 +641,8 @@ export default function Transaction() {
               </tr>
             </tbody>
           </table>
-        </div>
-      </div>
+        {/* </div> */}
+      {/* </div> */}
     </div>
   );
 }

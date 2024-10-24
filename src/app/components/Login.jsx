@@ -8,25 +8,55 @@ import { FaLock } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import Link from 'next/link';
+import {signIn} from "next-auth/react"
+import { useRouter } from 'next/navigation';
 
 const Login = () => {
+  const router=useRouter()
 
     const [show, setShow] = useState(false);
     const [err, setErr] = useState(false)
     const [err1, setErr1] = useState(false)
 
-    const [Username,setUsername] = useState(false)
+    const [email,setEmail] = useState(false)
     const [password,setPassword] = useState(false)
     
     const toggle = () => {
         setShow(!show)
     }
 
+    // 
     const submithandler =async (e) => {
-        console.log(e);
+      e.preventDefault()
+      if(!email){
+        setErr("please provide email")
+      }
+      else if (!password){
+        setErr1(
+            "plase provide passwword"
+        )
+      }
+      else{
+        // send credentials to api/auth/[...nextauth]/
+      // we use redirect to show error on the login page instaed of redirecting to the default error page
+      const res=await signIn("credentials",{email,password,redirect:false})
+      console.log("response :" , res )
+
+      if(res.status===200){
+          router.replace('/')
+      }
+      else{
+        setErr("invalid credentials")
+      }
+    }
+    // hamdle login wothout Next-Auth
+        // console.log(e);
         
-        e.preventDefault();
-        // fetch API here
+        // e.preventDefault();
+        // // fetch API here
+        //   const res=axios.post("http://localhost:3000/api/login", {
+        //     email,password
+        // })
         console.log("Form submitted");
     }
     
@@ -38,13 +68,20 @@ const Login = () => {
         
             <div>
              <form onSubmit={submithandler} action="" className='flex flex-col items-center gap-4 '>
+                
+                {
+                  err && (<h1 className="bg-red-500">{err}</h1>)
+                }
+                
+                  
+                
                 <div className='w-full relative'>
-                 <input className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90 placeholder-opacity-70' placeholder='Username'  type="text" />
+                 <input onChange={(e)=>setEmail(e.target.value)}className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90 placeholder-opacity-70' placeholder='EMail'  type="text" />
 				 <FaUser className='absolute top-2 right-4 text-sm text-cyan-700 opacity-50 z-10'/>
                 </div>
 
                 <div className='w-full relative'>
-                    <input className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90  placeholder-opacity-70'placeholder='Password'   type={(show === false)?'password' : 'text'} /> 
+                    <input onChange={(e)=>setPassword(e.target.value)} className='border-2 border-white  w-full rounded-full py-1 px-4 bg-transparent text-sm outline-none placeholder-cyan-700 text-cyan-700 text-opacity-90  placeholder-opacity-70'placeholder='Password'   type={(show === false)?'password' : 'text'} /> 
                     <FaLock className='absolute top-2 right-4 text-sm text-cyan-700 opacity-50 '/>
                 </div>
 
@@ -58,12 +95,13 @@ const Login = () => {
                 </div>
                     
 				<button className="glass rounded-full py-2 mt-1 px-3 shadow-md bg-sky-700  bg-opacity-50 hover:bg-opacity-70 hover:translate-y-px duration-300 text-white text-center font-semibold">Login Account</button>
-                </form>
+        {<h1>{password}</h1>}
+               </form>
                
 				<div className='flex text-center items-center justify-center py-4 '>
 					<span className='text-sm flex gap-1 bg-gradient-to-r from-sky-600  to-cyan-900 text-transparent bg-clip-text text-center'>Already have an account?<span className='text-md font-semibold bg-gradient-to-r from-blue-100  to-sky-600 text-transparent bg-clip-text cursor-pointer'><Link href="/register">Sign up</Link></span></span>
 				</div>
-                
+               
             </div>  
         </div>
     </div>

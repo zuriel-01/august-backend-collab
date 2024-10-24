@@ -4,7 +4,7 @@ import Otp from '../components/Otp'
 export default function OtpVerify() {
   return (
     <div>
-      <Otp/>x
+      <Otp/>
     </div>
   )
 }
