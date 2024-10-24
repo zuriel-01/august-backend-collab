@@ -17,6 +17,7 @@ import { LiaSearchSolid } from "react-icons/lia";
 import { IoSettingsOutline } from "react-icons/io5";
 import { RiLogoutBoxRLine } from "react-icons/ri";
 import { IoIosArrowDropright, IoIosArrowDropleft } from "react-icons/io";
+import { signOut } from "next-auth/react";
 
 const Navbar = () => {
   const [smallSide, setSmallSide] = useState(false);
@@ -59,6 +60,10 @@ const Navbar = () => {
     setIsDrop(!isDrop);
   };
 
+  // sign out 
+  async function signout(){
+    await signOut()
+  }
   return (
     <div className="relative">
       {!smallSide ? (
@@ -402,7 +407,8 @@ const Navbar = () => {
               <li className="flex items-center gap-3 hover:bg-sky-200 cursor-pointer p-2 hover:rounded-md">
                 <BiSupport className="text-2xl" /> Support
               </li>
-              <li className="flex items-center gap-3 hover:bg-sky-200 cursor-pointer p-2 hover:rounded-md">
+              
+              <li onClick={signout} className="flex items-center gap-3 hover:bg-sky-200 cursor-pointer p-2 hover:rounded-md">
                 <RiLogoutBoxRLine className="text-2xl" /> Logout
               </li>
             </ul>

@@ -23,8 +23,15 @@ import { TbBulb } from "react-icons/tb";
 import { FaTv } from "react-icons/fa";
 import { HiOutlineGiftTop } from "react-icons/hi2";
 import { ImSpades } from "react-icons/im";
+import { useSession } from "next-auth/react";
+import axios from "axios";
+import useSWR from "swr";
 
-const HomeSectionOne = () => {
+const HomeSectionOne =async  () => {
+  const session=useSession()
+
+const userEmail=session?.data?.user.email
+console.log("this is the email ", userEmail)
   const [showAccountBalance, setShowAccountBalance] = useState(true);
   const [showAccountBalance2, setShowAccountBalance2] = useState(true);
   const [showAccountBalance3, setShowAccountBalance3] = useState(true);
@@ -41,6 +48,31 @@ const HomeSectionOne = () => {
   const toggleShowAccountBalance3 = () => {
     setShowAccountBalance3(!showAccountBalance3);
   };
+
+  const fetcher=async (user)=>{
+    try{
+
+      const res=await axios.get(`http://localhost:3000/api/user/${user}`)
+      const data=await res.json()
+      console.log("this is the user deatils", res)
+      return data
+    }
+
+    catch(err){
+      console.log("this is the error - ", err.message)
+    }
+
+  }
+
+//   // await getDetails()
+// // we use swr to make a get request
+//   const { data, error, mutate, isLoading } = useSWR(`http://localhost:3000/api/user/${userEmail}`, fetcher)
+//     console.log('user details', data)
+
+// decided to go with useEffect
+useEffect(()=>{
+  fetcher(userEmail)
+},[])
 
   return (
     <>
@@ -162,6 +194,8 @@ const HomeSectionOne = () => {
                       </div>
 
                       <div className="flex flex-col">
+
+                        {/* send modal */}
                         <form className="mt-4" action="">
                           <div className="flex flex-col gap-1">
                             <label
@@ -173,6 +207,8 @@ const HomeSectionOne = () => {
                             <input
                               type="text"
                               placeholder="Select Bank"
+                              value="Co-bank"
+                              disabled
                               className="py-1 px-8 outline-none border border-neutral-400 rounded-[6px]"
                             />
                           </div>
@@ -189,6 +225,7 @@ const HomeSectionOne = () => {
                               placeholder="Eg. 1234567890"
                               className="py-1 px-8 outline-none border border-neutral-400 rounded-[6px]"
                             />
+                            <label htmlFor="">Obed chidera</label>
                           </div>
 
                           <div className="mt-10 flex m-auto">
